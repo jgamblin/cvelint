@@ -108,7 +108,7 @@ func CheckInvalidVersion(json *string) []ValidationError {
 
 	// Get affected products to check versionType
 	affected := gjson.Get(*json, `containers.cna.affected`)
-	
+
 	affected.ForEach(func(key, value gjson.Result) bool {
 		// Check version field
 		versions := value.Get("versions")
